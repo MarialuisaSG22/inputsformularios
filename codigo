@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulário Modelo</title>
+
+    <style>
+        /* =========================
+           VARIÁVEIS DE CORES
+        ========================== */
+
+        :root {
+            --cor-principal: #6a0dad;
+            --cor-secundaria: #9c27b0;
+            --cor-destaque: #d8b4fe;
+
+            --cor-fundo: #f5efff;
+            --cor-card: #ffffff;
+
+            --cor-texto: #2d163b;
+            --cor-texto-claro: #ffffff;
+
+            --cor-borda: #c4a7d7;
+
+            --sombra: 0 4px 15px rgba(80, 20, 120, 0.15);
+        }
+
+        /* =========================
+           CONFIGURAÇÃO GERAL
+        ========================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            background-color: var(--cor-principal);
+            color: var(--cor-texto-claro);
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           MENU
+        ========================== */
+
+        nav {
+            background-color: var(--cor-secundaria);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--cor-texto-claro);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--cor-destaque);
+        }
+
+        /* =========================
+           CONTEÚDO PRINCIPAL
+        ========================== */
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        /* =========================
+           FORMULÁRIO
+        ========================== */
+
+        form {
+            background-color: var(--cor-card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--sombra);
+        }
+
+        .campo {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--cor-borda);
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        input[type="file"] {
+            border: none;
+        }
+
+        /* Estilo para ajustar o input do tipo cor */
+        input[type="color"] {
+            height: 45px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        input[type="image"] {
+            width: auto;
+            padding: 0;
+            border: none;
+        }
+
+        input[type="reset"] {
+            width: auto;
+            background-color: var(--cor-secundaria);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: var(--cor-principal);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        button:hover,
+        input[type="reset"]:hover {
+            opacity: 0.8;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background-color: var(--cor-principal);
+            color: var(--cor-texto-claro);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header id="inicio">
+        <h1>INPUTS DE HTML</h1>
+        <p>Testando os tipos de input no HTML para lembrar para a prova.</p>
+    </header>
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#formulario">Formulário</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+        <form id="formulario">
+
+            <div class="campo">
+                <label for="texto">Texto</label>
+                <input id="texto" placeholder="Insira um texto" name="text" type="text">
+            </div>
+
+            <!-- NOVO INPUT 1: Número -->
+            <div class="campo">
+                <label for="idade">Idade (Número)</label>
+                <input id="idade" name="idade" type="number" min="0" max="120" placeholder="Digite sua idade">
+            </div>
+
+            <div class="campo">
+                <label for="data">Data</label>
+                <input id="data" name="data" type="date">
+            </div>
+
+            <div class="campo">
+                <label for="senha">Passaporte/Senha</label>
+                <input id="senha" name="senha" type="password" placeholder="Digite sua senha">
+            </div>
+
+            <div class="campo">
+                <label for="horario">Horário</label>
+                <input id="horario" name="horario" type="time">
+            </div>
+
+            <div class="campo">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Digite seu email">
+            </div>
+
+            <!-- NOVO INPUT 2: Cor -->
+            <div class="campo">
+                <label for="cor_favorita">Cor Favorita (Seletor de Cor)</label>
+                <input id="cor_favorita" name="cor_favorita" type="color" value="#6a0dad">
+            </div>
+
+            <div class="campo">
+                <label for="arquivo">Arquivo</label>
+                <input id="arquivo" name="arquivo" type="file">
+            </div>
+
+            <div class="campo">
+                <label for="imagem">Imagem</label>
+                <input id="imagem" name="imagem" type="image"
+                    src="https://placehold.co/100x40/6a0dad/ffffff?text=Enviar" alt="Enviar formulário">
+            </div>
+
+            <div class="campo">
+                <label for="resetar">Resetar formulário</label>
+                <input id="resetar" type="reset" value="Limpar">
+            </div>
+
+            <button type="submit">
+                Enviar
+            </button>
+
+        </form>
+
+    </main>
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer id="contato">
+        <p>Exemplo de formulário HTML</p>
+        <p>Desenvolvido para fins educacionais</p>
+    </footer>
+
+</body>
+
+</html>
